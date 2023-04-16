@@ -1,0 +1,22 @@
+type Query {
+  character(id:ID!): Character
+  admin: [Character]!
+  user: [Character]!
+}
+
+type Mutation {
+  upsertCharacter(input: CharacterInput!): Character!
+}
+
+
+type Character {
+  id: ID!
+  name: String!
+  address: String!
+}
+
+input CharacterInput {
+  name: String!
+  id: String
+  address: String!
+}
